@@ -1,0 +1,18 @@
+.pickupIllustrationImg {
+    width: 100%;
+}
+
+.homeContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #191F28;
+}
+
+.gridContainer {
+    padding: 16px;
+}
+
+.MuiButton-root :hover {
+    background-color: aqua;
+}
