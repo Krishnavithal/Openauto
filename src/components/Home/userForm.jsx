@@ -1,8 +1,8 @@
-import { Button, Grid, FormControl, FormHelperText, Snackbar, Alert, TextField } from "@mui/material"
-import "./home.css";
+import { Button, Grid, FormControl, FormHelperText, Snackbar, Alert, OutlinedInput } from "@mui/material"
 import { Formik } from "formik";
 import { object, string } from 'yup';
 import { useState } from "react";
+import "./home.css";
 
 function UserForm() {
     const [status, setStatus] = useState("info");
@@ -58,12 +58,12 @@ function UserForm() {
                                 focused={false}
                                 error={errors.userName && touched.userName}
                             >
-                                <TextField
-                                    fullWidth
+                                <OutlinedInput
                                     required
                                     name="userName"
                                     placeholder="Enter Your Name"
                                     value={values.userName}
+                                    className="input-fields"
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 />
@@ -75,30 +75,24 @@ function UserForm() {
                             </FormControl>
                             <FormControl
                                 fullWidth
+                                focused={false}
                                 error={errors.email && touched.email}
                             >
-                                <TextField
-                                    fullWidth
+                                <OutlinedInput
                                     required
                                     name="email"
                                     placeholder="Enter Your Email"
                                     type="email"
                                     value={values.email}
+                                    className="input-fields"
                                     onChange={handleChange}
                                     onBlur={handleBlur}
-                                    color="secondary"
                                 />
                                 <FormHelperText style={{ paddingLeft: '8px' }}>
                                     {errors.email && touched.email ? errors.email : ' '}
                                 </FormHelperText>
                             </FormControl>
-                            <Button
-                                fullWidth
-                                type="submit"
-                                variant="contained"
-                                color="secondary"
-                                disabled={!!(errors.email || errors.userName)}
-                            >
+                            <Button className="submit" type="submit" color="inherit" variant="outlined" disabled={!!(errors.email || errors.userName)}>
                                 Submit
                             </Button>
                         </Grid>

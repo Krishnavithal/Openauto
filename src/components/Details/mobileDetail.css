@@ -1,0 +1,15 @@
+.detailsParent {
+    background-color: #171C24;
+}
+
+.pickupServiceImg {
+    width: 100%;
+}
+
+.gridContainerDetails {
+    padding: 48px 48px 0 48px;
+}
+
+.gridContainerDetails-item {
+    padding: 72px;
+}

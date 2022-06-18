@@ -3,16 +3,31 @@
 }
 
 .homeContent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #191F28;
 }
 
 .gridContainer {
-    padding: 16px;
+    padding: 16px 40px 0 40px;
 }
 
 .MuiButton-root :hover {
     background-color: aqua;
+}
+
+.MuiTypography-root.home-page-heading {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.MuiButton-root.submit,
+.MuiOutlinedInput-root.input-fields {
+    border-radius: 24px;
+    width: 50%;
+    color: white;
+    border: solid white;
+}
+
+.MuiButton-root.submit:hover {
+    background: #7B0DE1;
+    border: solid #7B0DE1;
 }
