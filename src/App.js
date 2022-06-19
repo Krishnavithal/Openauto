@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home/home';
+import Details from './components/Details/mobileDetail';
+import Header from './components/Header/header';
+import { useTheme, useMediaQuery } from "@mui/material"
 
 function App() {
+  const theme = useTheme();
+  const xsView = useMediaQuery(theme.breakpoints.down('sm'));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="home">
+      <Header hideRightActions={xsView} />
+      <Home />
+      <Details />
     </div>
   );
 }

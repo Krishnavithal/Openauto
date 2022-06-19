@@ -1,0 +1,24 @@
+.MuiPaper-root.footer {
+    background: #191F28 !important
+}
+
+.footer-icons {
+    display: flex;
+    column-gap: 32px;
+}
+
+.go-down-button:hover {
+    cursor: pointer;
+    transform: rotate(180deg)
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(180deg)
+    }
+}
+
+.policies{
+    display: flex;
+    column-gap: 12px;
+}
