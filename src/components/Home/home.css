@@ -30,7 +30,7 @@
 }
 
 .MuiButton-root.saving {
-    background: #7B0DE1;
+    background: #7B0DE1 !important;
 }
 
 .loader {
@@ -64,10 +64,14 @@
     }
 
     .MuiButton-root.submit,
+    .MuiButton-root.saving,
     .MuiOutlinedInput-root.input-fields {
         border-radius: 24px;
         width: 100%;
         color: white;
         border: solid white;
+    }
+    .MuiButton-root.saving {
+        background: #7B0DE1;
     }
 }
