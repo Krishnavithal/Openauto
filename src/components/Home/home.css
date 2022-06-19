@@ -29,7 +29,7 @@
     border: solid #7B0DE1;
 }
 
-.MuiButton-root.saving,.MuiButton-root.submit {
+.MuiButton-root.saving {
     background: #7B0DE1;
 }
 

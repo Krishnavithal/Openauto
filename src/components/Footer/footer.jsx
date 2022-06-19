@@ -34,7 +34,7 @@ export default function Footer({ hideCopyRightsLogo, showPolicies }) {
                     <span>Terms of use</span>
                     <span>Cookie policy</span>
                 </div>}
-                <div className="footer-icons">
+                <div className="footer-icons" style={{ width: xsView && showPolicies && "100%", justifyContent: xsView && showPolicies && "space-between" }}>
                     <Facebook />
                     <Twitter />
                     <YouTube />

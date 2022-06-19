@@ -13,7 +13,7 @@ function Header({ hideDownloadButton, hideRightActions }) {
     const xsView = useMediaQuery(theme.breakpoints.down('sm'));
     return (
         <AppBar className="header" position="static" sx={{ padding: "16px" }}>
-            <Toolbar sx={{ display: xsView && "flex", flexDirection: xsView && "column", padding: xsView && "0px" }}>
+            <Toolbar sx={{ display: xsView && "flex", flexDirection: xsView && "column", padding: xsView && "0px", alignItems: hideRightActions && "start" }}>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: "32px" }}>
                     OPENAUTO
                 </Typography>
