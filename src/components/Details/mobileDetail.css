@@ -13,3 +13,19 @@
 .gridContainerDetails-item {
     padding: 72px;
 }
+
+@media screen and (max-width: 767px) {
+    .gridContainerDetails {
+        padding: 16px 40px 0 40px;
+    }
+
+    .gridContainerDetails-item {
+        padding: 0;
+    }
+
+    .MuiTypography-root.detailHeading {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+    }
+}

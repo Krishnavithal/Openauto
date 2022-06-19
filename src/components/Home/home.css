@@ -31,3 +31,41 @@
     background: #7B0DE1;
     border: solid #7B0DE1;
 }
+
+.loader {
+    border: 1px solid #f3f3f3;
+    /* Light grey */
+    border-top: 1px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+    margin-right: 2px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .MuiTypography-root.home-page-heading {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .MuiButton-root.submit,
+    .MuiOutlinedInput-root.input-fields {
+        border-radius: 24px;
+        width: 100%;
+        color: white;
+        border: solid white;
+    }
+}

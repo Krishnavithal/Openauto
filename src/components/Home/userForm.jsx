@@ -1,34 +1,48 @@
 import { Button, Grid, FormControl, FormHelperText, Snackbar, Alert, OutlinedInput } from "@mui/material"
 import { Formik } from "formik";
 import { object, string } from 'yup';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./home.css";
 
 function UserForm() {
+
     const [status, setStatus] = useState("info");
     const [message, setMessage] = useState("Please submit your details");
-    const [openSnackbar, setopenSnackbar] = useState(false);
+    const [openSnackbar, setOpenSnackbar] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        setIsLoading(false);
+    }, []);
+
     const validationSchema = object().shape({
         email: string().label('Email').required().email(),
         userName: string().label('Name').required(),
     });
     const handleSubmit = (_values) => {
         console.log("Submitted.........", _values);
+        setIsLoading(true);
         fetch(`https://my.api.mockaroo.com/Openauto_User/${_values['userName']}/${_values['email'].replace(".com", "")}?key=b1d91540&__method=POST`, {
             method: 'POST'
         })
-            .then(res => res.json())
+            .then(res => {
+                setIsLoading(false);
+                if (res.ok) {
+                    return res.json();
+                }
+                throw new Error('Something went wrong');
+            })
             .then(data => {
                 console.log(data['first_name']);
                 setStatus("success");
                 setMessage("Details saved successfully");
-                setopenSnackbar(true);
+                setOpenSnackbar(true);
             })
             .catch(err => {
                 console.log(err);
                 setStatus("error");
                 setMessage("Something went wrong");
-                setopenSnackbar(true);
+                setOpenSnackbar(true);
             });
 
     }
@@ -92,9 +106,14 @@ function UserForm() {
                                     {errors.email && touched.email ? errors.email : ' '}
                                 </FormHelperText>
                             </FormControl>
-                            <Button className="submit" type="submit" color="inherit" variant="outlined" disabled={!!(errors.email || errors.userName)}>
+                            {isLoading ? <Button
+                                className="submit"
+                                variant="outlined"
+                            >
+                                <div className="loader"></div>Saving
+                            </Button> : <Button className="submit" type="submit" variant="outlined" disabled={!!(errors.email || errors.userName)}>
                                 Submit
-                            </Button>
+                            </Button>}
                         </Grid>
                     </form>)}
             </Formik>
@@ -103,7 +122,7 @@ function UserForm() {
                 open={openSnackbar}
                 autoHideDuration={1000}
             >
-                <Alert onClose={() => { setopenSnackbar(false) }} severity={status} >
+                <Alert onClose={() => { setOpenSnackbar(false) }} severity={status} >
                     {message}
                 </Alert>
             </Snackbar>
