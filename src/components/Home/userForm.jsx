@@ -120,8 +120,9 @@ function UserForm() {
                                 </FormHelperText>
                             </FormControl>
                             {isLoading ? <Button
-                                className="submit"
+                                className="saving"
                                 variant="outlined"
+                                disabled
                             >
                                 <div className="loader"></div>Saving
                             </Button> : <Button className="submit" type="submit" variant="outlined" disabled={!!(errors.email || errors.userName)}>
