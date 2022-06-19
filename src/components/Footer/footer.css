@@ -2,7 +2,7 @@
     background: #191F28 !important
 }
 
-.footerIcons {
+.footer-icons {
     display: flex;
     column-gap: 32px;
 }

@@ -1,17 +1,13 @@
-.pickupIllustrationImg {
+.pickup-illustration-img {
     width: 100%;
 }
 
-.homeContent {
+.home-content {
     background-color: #191F28;
 }
 
-.gridContainer {
+.grid-container {
     padding: 16px 40px 0 40px;
-}
-
-.MuiButton-root :hover {
-    background-color: aqua;
 }
 
 .MuiTypography-root.home-page-heading {

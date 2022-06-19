@@ -1,3 +1,8 @@
+/**
+     * Usage: Renders the user details form component;
+     * This is invoked from home.jsx
+*/
+
 import { Button, Grid, FormControl, FormHelperText, Snackbar, Alert, OutlinedInput } from "@mui/material"
 import { Formik } from "formik";
 import { object, string } from 'yup';
@@ -6,19 +11,22 @@ import "./home.css";
 
 function UserForm() {
 
-    const [status, setStatus] = useState("info");
-    const [message, setMessage] = useState("Please submit your details");
-    const [openSnackbar, setOpenSnackbar] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
+    const [status, setStatus] = useState("info"); // used to set the status of snackbar Eg: 'success','error'
+    const [message, setMessage] = useState("Please submit your details"); // used to set the custom message on snackbar
+    const [openSnackbar, setOpenSnackbar] = useState(false); // used to toggle the rendering of snackbar
+    const [isLoading, setIsLoading] = useState(true); // used to show loading when API call is triggered
 
     useEffect(() => {
-        setIsLoading(false);
+        setIsLoading(false); // IsLoading is set to true after the component is mounted.
     }, []);
 
+    // Validation schema for the form
     const validationSchema = object().shape({
         email: string().label('Email').required().email(),
         userName: string().label('Name').required(),
     });
+
+    // handleSubmit used to submit the form and send the API call
     const handleSubmit = (_values) => {
         console.log("Submitted.........", _values);
         setIsLoading(true);

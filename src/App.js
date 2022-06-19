@@ -9,7 +9,7 @@ function App() {
   const xsView = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <div className="home">
-      <Header hideLeftActions={xsView} />
+      <Header hideRightActions={xsView} />
       <Home />
       <Details />
     </div>

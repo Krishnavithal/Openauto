@@ -1,3 +1,7 @@
+/**
+     * Usage: Renders the home component;
+*/
+
 import { Grid, Typography, useTheme, useMediaQuery } from "@mui/material"
 import "./home.css";
 import { Pickup_Illustration } from "../../assets/images";
@@ -8,8 +12,8 @@ function Home() {
     const theme = useTheme();
     const xsView = useMediaQuery(theme.breakpoints.down('sm'));
     return (
-        <div className="homeContent">
-            <Grid container className="gridContainer" direction={xsView ? "column" : "row"}>
+        <div className="home-content">
+            <Grid container className="grid-container" direction={xsView ? "column" : "row"}>
                 <Grid item container xs={6} direction="column" sx={{ rowGap: xsView ? "8px" : "32px", paddingBottom: xsView && "32px" }}>
                     <div style={{ display: 'flex', flexDirection: "column" }}>
                         <Typography className="home-page-heading" variant="h4" component="div" color="white">Vehicle Maintenance</Typography>
@@ -20,7 +24,7 @@ function Home() {
                     <UserForm />
                 </Grid>
                 <Grid item xs={6}>
-                    <img className="pickupIllustrationImg" src={Pickup_Illustration} alt="Not found" />
+                    <img className="pickup-illustration-img" src={Pickup_Illustration} alt="Not found" />
                 </Grid>
             </Grid>
             <Footer hideCopyRightsLogo={true} />

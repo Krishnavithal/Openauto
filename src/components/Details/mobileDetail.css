@@ -1,29 +1,29 @@
-.detailsParent {
+.details-parent {
     background-color: #171C24;
 }
 
-.pickupServiceImg {
+.pickup-service-img {
     width: 100%;
 }
 
-.gridContainerDetails {
+.grid-container-details {
     padding: 48px 48px 0 48px;
 }
 
-.gridContainerDetails-item {
+.grid-container-details-item {
     padding: 72px;
 }
 
 @media screen and (max-width: 767px) {
-    .gridContainerDetails {
+    .grid-container-details {
         padding: 16px 40px 0 40px;
     }
 
-    .gridContainerDetails-item {
+    .grid-container-details-item {
         padding: 0;
     }
 
-    .MuiTypography-root.detailHeading {
+    .MuiTypography-root.detail-heading {
         font-size: 28px;
         font-weight: bold;
         text-align: center;

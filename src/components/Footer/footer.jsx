@@ -1,3 +1,9 @@
+/**
+     * Usage: Renders the footer component;
+     * @prop {*} hideCopyRightsLogo toggle the rendering the copyrights label
+     * @prop {*} showPolicies toggle the rendering the policies label
+*/
+
 import { AppBar, Toolbar, useTheme, useMediaQuery } from '@mui/material';
 import { Facebook, Twitter, YouTube, LinkedIn, Instagram, ArrowCircleUp } from '@mui/icons-material';
 import Typography from '@mui/material/Typography';
@@ -28,7 +34,7 @@ export default function Footer({ hideCopyRightsLogo, showPolicies }) {
                     <span>Terms of use</span>
                     <span>Cookie policy</span>
                 </div>}
-                <div className="footerIcons">
+                <div className="footer-icons">
                     <Facebook />
                     <Twitter />
                     <YouTube />
