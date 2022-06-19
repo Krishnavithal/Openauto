@@ -22,7 +22,7 @@ For error:
 Name: "12"
 Email: any valid email address
 
-Live demo [here](https://openauto.netlify.app)
+Live demo [here](https://alpha-openauto.netlify.app/)
 
 ## Installation
 
