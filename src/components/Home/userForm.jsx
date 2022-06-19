@@ -3,11 +3,16 @@
      * This is invoked from home.jsx
 */
 
-import { Button, Grid, FormControl, FormHelperText, Snackbar, Alert, OutlinedInput } from "@mui/material"
+import { Button, Grid, FormControl, FormHelperText, Snackbar, OutlinedInput } from "@mui/material"
 import { Formik } from "formik";
 import { object, string } from 'yup';
-import { useState, useEffect } from "react";
+import { useState, useEffect,forwardRef } from "react";
 import "./home.css";
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 function UserForm() {
 
